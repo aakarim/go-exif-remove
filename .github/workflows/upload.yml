@@ -11,16 +11,14 @@ jobs:
     name: Build
     strategy:
       matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
         include:
-          os: ubuntu-latest
-            env:
-              - BINARY_NAME: remove-exif-${{ github.ref }}
-          os: macos-latest
-            env:
-              - BINARY_NAME: remove-exif-${{ github.ref }}
-          os: windows-latest:
-            env:
-              - BINARY_NAME: remove-exif-${{ github.ref }}.exe
+        - os: ubuntu-latest
+          BINARY_NAME: remove-exif-${{ github.ref }}
+        - os: macos-latest
+          BINARY_NAME: remove-exif-${{ github.ref }}
+        - os: windows-latest:
+          BINARY_NAME: remove-exif-${{ github.ref }}.exe
     runs-on: ${{ matrix.os }}
     steps:
 
