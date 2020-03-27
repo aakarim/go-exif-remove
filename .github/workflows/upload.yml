@@ -17,7 +17,7 @@ jobs:
           BINARY_NAME: remove-exif-${{ github.ref }}
         - os: macos-latest
           BINARY_NAME: remove-exif-${{ github.ref }}
-        - os: windows-latest:
+        - os: windows-latest
           BINARY_NAME: remove-exif-${{ github.ref }}.exe
     runs-on: ${{ matrix.os }}
     steps:
